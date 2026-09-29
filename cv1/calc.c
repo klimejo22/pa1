@@ -22,8 +22,17 @@ int main() {
         res = a + b;
     } else if (c == '-') {
         res = a - b;
-    } else {
-        res = 0;
+    } else if (c == '*') {
+        res = a * b;
+    } else if (c == '/') {
+        if (b == 0) {
+            printf("Chyba ve vstupu: delit nulou se neda");
+            return 1;
+        }
+
+        res = a / b;
+    }
+    else {
         printf("Chyba ve vstupu pro znamenko\n");
         return 1;
     }
