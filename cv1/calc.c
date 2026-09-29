@@ -15,7 +15,7 @@ int main() {
     printf("%d + %d = %d\n", a, b, (a + b));
     printf("%d - %d = %d\n", a, b, (a - b));
     printf("%d * %d = %d\n", a, b, (a * b));
-    printf((a == 0 || b == 0) ? "Error\n" : "%d / %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a / b));
-    printf((a == 0 || b == 0) ? "Error\n" : "%d mod %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a % b));
+    printf((a == 0 || b == 0) ? "Error: Delit nulou se neda\n" : "%d / %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a / b));
+    printf((a == 0 || b == 0) ? "Error: Delit nulou se neda\n" : "%d mod %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a % b));
     return 0;
 }
