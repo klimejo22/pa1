@@ -10,13 +10,12 @@ int main() {
     //     printf("Spatny vstup, zadej cislo.\n");
     //     return 1;
     // }
-    printf("Zadal jsi cisla %d a %d\n", a, b);
 
     // Vypocty
     printf("%d + %d = %d\n", a, b, (a + b));
     printf("%d - %d = %d\n", a, b, (a - b));
     printf("%d * %d = %d\n", a, b, (a * b));
-    printf("%d / %d = %d\n", a, b, (a / b));
-    printf("%d mod %d = %d\n", a, b, (a % b));
+    printf((a == 0 || b == 0) ? "Error\n" : "%d / %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a / b));
+    printf((a == 0 || b == 0) ? "Error\n" : "%d mod %d = %d\n", a, b, (a == 0 || b == 0) ? 0 : (a % b));
     return 0;
 }
