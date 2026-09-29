@@ -4,9 +4,15 @@ int main() {
     int a, b, res;
     char c;
     printf("Zadej priklad:\n");
-    scanf("%d", &a);
+    if (scanf("%d", &a) != 1) {
+        printf("Spatny vstup, zadej cislo\n");
+        return 1;
+    }
     scanf("%c", &c);
-    scanf("%d", &b);
+    if (scanf("%d", &b)) {
+        printf("Spatny vstup, zadej cislo\n");
+        return 1;
+    }
     // if ( != 1) {
     //     printf("Spatny vstup, zadej cislo.\n");
     //     return 1;
