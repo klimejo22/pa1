@@ -74,13 +74,17 @@ int main() {
             }
         } else if (i == 2 && digits[i] > 0) {
             // Desitky
+            
             if (digits[i] == 1) {
-                strcat(returnValue, decimals[digits[i + 1] - 1]);
-                break;
+                if (digits[i + 1] == 0) {
+                    strcat(returnValue, decimals[0]);
+                } else {
+                    strcat(returnValue, decimals[digits[i + 1] - 1]);
+                }
             }
 
             strcat(returnValue, strcat(units[digits[i] - 1], "cet "));
-        } else if (digits[i] > 0) {
+        } else if (digits[i] > 0 && digits[i - 1] != 1) {
             // Jednotky
             strcat(returnValue, units[digits[i] - 1]);
         }
