@@ -15,21 +15,18 @@ int main() {
     }
 
     if (height == 1) {
-        printf("*");
+        printf("*\n");
         return 0;
     }
 
     int whitspaceCount;
     for (int row = 1; row <= height; row++) {
         whitspaceCount = height - row; 
-        for (int col = whitspaceCount; col <= height; col++) {
-            printf("0");
+        for (int col = 1; col <= whitspaceCount; col++) {
+            printf(" ");
         }
-        for (int col = (whitspaceCount * 2) - 1; col <= height; col++) {
+        for (int col = 1; col <= (row * 2) - 1; col++) {
             printf("*");
-        }
-        for (int col = whitspaceCount; col <= height; col++) {
-            printf("0");
         }
         printf("\n");
     }
