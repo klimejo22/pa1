@@ -6,8 +6,11 @@ int getMiddle(int height) {
     if (height == 0) {
         return 0;
     }
-
-    return ceil(height / 2);
+    int half = ceil(height / 2);
+    if (height % 2 == 1) {
+        half++;
+    }
+    return half;
 }
 int main() {
     int input, height;
@@ -30,7 +33,7 @@ int main() {
         // Prostredni radky
         else if (row <= middle) {
             for (int col = 1; col <= height; col++) {
-                if (col <= midrow + 1 || col >= height - midrow) {
+                if (col == 1 || col == height || col == midrow + 1 || col == height - midrow) {
                     printf("*");
                 } else {
                     printf(" ");
