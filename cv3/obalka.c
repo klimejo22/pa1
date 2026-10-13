@@ -11,8 +11,8 @@ int getMiddle(int height) {
 }
 int main() {
     int input, height;
-    printf("Zadej velikost obalky (alespon 4):\n");
-    if ((input = scanf("%d", &height)) != 1 && i < 5) {
+    printf("Zadej velikost obalky (alespon 5):\n");
+    if ((input = scanf("%d", &height)) != 1 && input < 5) {
         printf("Spatny vstup\n");
         return 1;
     }
