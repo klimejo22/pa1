@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int factorize(int n, int* arr) {
+    int index = 0;
+    while (n % 2 == 0) {
+        arr[index++] = 2;
+        n /= 2;
+    }
+    for (int i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            arr[index++] = i;
+            n /= i;
+        }
+    }
+    if (n > 2) {
+        arr[index++] = n;
+    }
+    return index;
+}
+int main() {
+    int primes[32];
+    int n;
+    printf("Zadej cislo: \n");
+    if (scanf("%d", &n) != 1) {
+        printf("Spatny vstup");
+        return 1;
+    }
+    factorize(n, primes);
+    for (int i = 0; i < factorize(n, primes); i++) {
+        printf("%d * ", primes[i]);
+    }
+    printf("\n");
+    return 0;
+}
