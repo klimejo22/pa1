@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
 int factorize(int n, int* arr) {
     int index = 0;
     while (n % 2 == 0) {
@@ -43,6 +43,24 @@ int main() {
             j++;
         }
         printf("%d ", j);
+        
+        if (i != loopLength - 1) {
+            printf("* ");
+        }
+    }
+    printf("\n");
+    for (int i = 0; i < loopLength; i += j) {
+        j = 1;
+        printf("%d", primes[i]);
+        while (i + j < loopLength && primes[i + j] == primes[i]) {
+            j++;
+        }
+        if (j > 1) {
+            printf("^%d ", j);
+        } else {
+            printf(" ");
+        }
+        
         
         if (i != loopLength - 1) {
             printf("* ");
