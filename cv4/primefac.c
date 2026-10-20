@@ -26,9 +26,13 @@ int main() {
         printf("Spatny vstup");
         return 1;
     }
+    int loopLength = factorize(n, primes);
     factorize(n, primes);
-    for (int i = 0; i < factorize(n, primes); i++) {
-        printf("%d * ", primes[i]);
+    for (int i = 0; i < loopLength; i++) {
+        printf("%d ", primes[i]);
+        if (i != loopLength - 1) {
+            printf("* ");
+        }
     }
     printf("\n");
     return 0;
