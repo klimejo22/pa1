@@ -35,5 +35,19 @@ int main() {
         }
     }
     printf("\n");
+    int j;
+    for (int i = 0; i < loopLength; i += j) {
+        j = 1;
+        printf("%d^", primes[i]);
+        while (i + j < loopLength && primes[i + j] == primes[i]) {
+            j++;
+        }
+        printf("%d ", j);
+        
+        if (i != loopLength - 1) {
+            printf("* ");
+        }
+    }
+    printf("\n");
     return 0;
 }
