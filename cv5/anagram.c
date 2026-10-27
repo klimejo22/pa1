@@ -18,7 +18,7 @@ int main() {
     printf("Zadej prvky prvniho pole:\n");
     
     for(int i = 0; i < n1; i++) {
-        if (scanf("%d", &prvni[i])) {
+        if (scanf("%d", &prvni[i]) != 1) {
             printf("Spatny vstup\n");
             return 1;
         }
@@ -33,7 +33,7 @@ int main() {
     printf("Zadej prvky druheho pole:\n");
     
     for(int i = 0; i < n2; i++) {
-        if (scanf("%d", &druhy[i])) {
+        if (scanf("%d", &druhy[i]) != 1) {
             printf("Spatny vstup\n");
             return 1;
         }
