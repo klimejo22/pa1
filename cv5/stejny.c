@@ -54,13 +54,13 @@ int main() {
     int j = 0;
     int k = 0;
     for (int i = 0; i < n1; i++) {
-        if (inArray(prvni[i], sizeof(seen1) / sizeof(seen1[0]), seen1)) {
+        if (!inArray(prvni[i], j, seen1)) {
             seen1[j] = prvni[i];
             j++;
         }
     }
     for (int i = 0; i < n2; i++) {
-        if (inArray(druhy[i], sizeof(seen2) / sizeof(seen2[0]), seen2)) {
+        if (!inArray(druhy[i], k, seen2)) {
             seen2[k] = druhy[i];
             k++;
         }
