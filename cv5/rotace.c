@@ -45,9 +45,10 @@ int main() {
     }
 
     int doubled[200];
-    for (int i = 0; i < 2; i++) {
+    int doubledSize;
+    for (doubledSize = 0; i < 2; doubledSize++) {
         for (int j = 0; j < n1; j++) {
-            doubled[i] = prvni[j];
+            doubled[doubledSize] = prvni[j];
         }
     }
     
