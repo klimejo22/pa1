@@ -4,8 +4,8 @@
 int comp(const void* a, const void* b) {
     return (*(int*)a - *(int*)b);
 }
-int inArray(int n, int *array) {
-    for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
+int inArray(int n, int length, int *array) {
+    for (int i = 0; i < length; i++) {
         if (n == array[i]) {
             return 1;
         }
@@ -54,15 +54,15 @@ int main() {
     int j = 0;
     int k = 0;
     for (int i = 0; i < n1; i++) {
-        if (inArray(prvni[i], seen1)) {
+        if (inArray(prvni[i], sizeof(seen1) / sizeof(seen1[0]), seen1)) {
             seen1[j] = prvni[i];
             j++;
         }
     }
     for (int i = 0; i < n2; i++) {
-        if (inArray(druhy[i], seen2)) {
-            seen2[j] = druhy[i];
-            j++;
+        if (inArray(druhy[i], sizeof(seen2) / sizeof(seen2[0]), seen2)) {
+            seen2[k] = druhy[i];
+            k++;
         }
     }
 
