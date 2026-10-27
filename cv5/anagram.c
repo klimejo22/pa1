@@ -6,49 +6,48 @@ int comp(const void* a, const void* b) {
 }
 
 int main() {
-    int n[2], temp;
+    int prvni[100], druhy[100];
+    int n1, n2;
 
     printf("Zadej velikost prvniho pole: ");
-    if (scanf("%d", &n[0]) != 1) {
+    if (scanf("%d", &n1) != 1) {
         printf("Spatny vstup\n");
         return 1;
     }
 
     printf("Zadej prvky prvniho pole:\n");
     
-    int prvni[n];
-    for(i = 0; i < n; i++) {
-        if (scanf("%d", &druhy[i])) {
+    for(int i = 0; i < n1; i++) {
+        if (scanf("%d", &prvni[i])) {
             printf("Spatny vstup\n");
             return 1;
         }
     }
 
     printf("Zadej velikost druheho pole: ");
-    if (scanf("%d", &n[1]) != 1) {
+    if (scanf("%d", &n2) != 1) {
         printf("Spatny vstup\n");
         return 1;
     }
 
     printf("Zadej prvky druheho pole:\n");
     
-    int druhy[n];
-    for(i = 0; i < n; i++) {
+    for(int i = 0; i < n2; i++) {
         if (scanf("%d", &druhy[i])) {
             printf("Spatny vstup\n");
             return 1;
         }
     }
 
-    if (n[1] != n[0]) {
+    if (n1 != n2) {
         printf("Neni anagram\n");
         return 0;
     }
 
-    qsort(prvni, n[0], sizeof(int), comp);
-    qsort(druhy, n[1], sizeof(int), comp);
+    qsort(prvni, n1, sizeof(int), comp);
+    qsort(druhy, n2, sizeof(int), comp);
 
-    for (int i = 0, i < n[1], i++) {
+    for (int i = 0; i < n1; i++) {
         if (prvni[i] != druhy[i]) {
             printf("Neni anagram\n");
             return 0;
