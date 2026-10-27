@@ -39,9 +39,10 @@ int main() {
         }
     }
 
-    qsort(prvni, n1, sizeof(int), comp);
-    qsort(druhy, n2, sizeof(int), comp);
+    if (n1 != n2) {
+        printf("Neni anagram\n");
+        return 0;
+    }
 
-    
     return 0;
 }
