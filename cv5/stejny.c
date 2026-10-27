@@ -65,5 +65,12 @@ int main() {
             j++;
         }
     }
+
+    if (j == k) {
+        printf("Jsou stejny\n");
+        return 0;
+    }
+
+    printf("Nejsou stejny\n");
     return 0;
 }
