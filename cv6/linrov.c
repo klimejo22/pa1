@@ -15,6 +15,11 @@ void swapRows(int *matrix, int row1, int row2, int cols) {
     }
 }
 
+void multiplyRows(int *matrix, int row, int coeficient, int cols) {
+    for (int i = 0; i < cols; i++) {
+        matrix[row][i] = matrix[row][i] * coeficient;
+    }
+}
 int main() {
     int rows, cols, matrix[100][100];
 
