@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void incrementLoop(int *current, int *i) {
+    current--
+    i++;
+}
+
+int inArray(int n, int length, int *array) {
+    for (int i = 0; i < length; i++) {
+        if (n == array[i]) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 int main() {
     int rows, cols, matrix[100][100];
 
@@ -16,7 +31,7 @@ int main() {
         printf("Spatny vstup\n");
         return 1;
     }
-    
+
     printf("Zadej pocet sloupcu: \n");
     if (scanf("%d", &cols) != 1 && cols < 100) {
         printf("Spatny vstup\n");
@@ -34,5 +49,16 @@ int main() {
             }
         }
     }
+
+    int currentCol, currentRow, seen[500];
+    currentRow = rows;
+    currentCol = cols;
+
+    for (int i = 0; i < currentRow; i++) {
+        for (int j = 0; j < currentCol; incrementLoop(currentCol, j)) {
+            printf("%d ", matrix[i][j]);
+        }
+    }
+
     return 0;
 }
