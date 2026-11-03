@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void incrementLoop(int *current, int *i) {
-    current--
-    i++;
-}
-
-int inArray(int n, int length, int *array) {
-    for (int i = 0; i < length; i++) {
-        if (n == array[i]) {
-            return 1;
-        }
+void swapRows(int *matrix, int row1, int row2, int cols) {
+    int temp[cols];
+    int i;
+    for (i = 0; i < cols; i++) {
+        temp[i] = matrix[row1][i];
     }
-
-    return 0;
+    for (i = 0; i < cols, i++) {
+        matrix[row1][i] = matrix[row2][i];
+    }
+    for (i = 0; i < cols; i++) {
+        matrix[row2][i] = temp[i];
+    }
 }
 
 int main() {
@@ -49,6 +48,6 @@ int main() {
             }
         }
     }
-    
+
     return 0;
 }
