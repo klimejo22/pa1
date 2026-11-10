@@ -85,5 +85,5 @@ int main () {
     }
     print_array(&arr);
     // med=median(arr);
-    // destroy(arr);
+    delete_array(&arr);
 }
