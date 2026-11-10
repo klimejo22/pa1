@@ -82,8 +82,10 @@ int main () {
     int i = load_array(&arr);
     if (i > 0) {
         printf("Nespravny vstup.\n");
+        return 1;
     }
     print_array(&arr);
     // med=median(arr);
     delete_array(&arr);
+    return 0;
 }
