@@ -57,15 +57,22 @@ int load_array(struct dyn_array *arr) {
 	}
     return 0;
 }
+void sort_array(struct dyn_array *arr) {
+    qsort(arr->data, arr->size, sizeof(unsigned int), compareUnsignedInt)
+}
+
 void print_array(struct dyn_array *arr) {
     for (int i = 0; i < arr->size; i++) {
         printf("%u\n", arr->data[i]);
     }
 }
-int compareUnsignedInt ( const void * ptrA, const void * ptrB ) {
-	unsigned int a = *(const unsigned int *) ptrA,
-	             b = *(const unsigned int *) ptrB;
-	return ( a > b ) - ( b > a );
+int compareUnsignedInt ( const void * a, const void * b ) {
+	unsigned arg1 = *(const unsigned *)a;
+    unsigned arg2 = *(const unsigned *)b;
+
+    if (arg1<arg2) return -1;
+    if (arg1>arg2) return 1;
+    return 0;
 }
 
 int main () {
@@ -84,6 +91,8 @@ int main () {
         printf("Nespravny vstup.\n");
         return 1;
     }
+    print_array(&arr);
+    sort_array(&arr);
     print_array(&arr);
     // med=median(arr);
     delete_array(&arr);
