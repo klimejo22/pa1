@@ -16,6 +16,13 @@ int factRec(int n) {
     return n * factRec(n-1);
 }
 
+int sumArray(int *arr, size_t arr_len) {
+    if (arr_len == 0) {
+        return 0;
+    }
+    return arr[0] + sumArray(arr + 1, arr_len - 1);
+}
+
 int main() {
 
     return 0;
