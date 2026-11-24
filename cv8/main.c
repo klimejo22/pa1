@@ -25,10 +25,19 @@ int sumArray(int *arr, size_t arr_len) {
 
 void printArray(int *arr, size_t arr_len) {
     if (arr_len == 0) {
+        printf("\n");
         return;
     }
     printf("%d ", arr[0]);
     printArray(arr + 1, arr_len - 1);
+}
+
+void printArrayReverse(int *arr, size_t arr_len) {
+    printArray(arr + 1, arr_len - 1);
+    printf("%d ", arr[0]);
+    if (arr_len == 0) {
+        return;
+    }
 }
 
 int main() {
