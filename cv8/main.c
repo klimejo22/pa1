@@ -23,6 +23,14 @@ int sumArray(int *arr, size_t arr_len) {
     return arr[0] + sumArray(arr + 1, arr_len - 1);
 }
 
+void printArray(int *arr, size_t arr_len) {
+    if (arr_len == 0) {
+        return;
+    }
+    printf("%d ", arr[0]);
+    printArray(arr + 1, arr_len - 1);
+}
+
 int main() {
 
     return 0;
